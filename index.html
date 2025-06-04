@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>زوجي الحبيب</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    .slideshow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    .text {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      left: 20px;
+      font-size: 10px;
+      color: white;
+      text-shadow: 0 0 5px beige;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .button-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: beige;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slideshow">
+  <img src="M1.jpg" class="active">
+  <img src="M2.jpg">
+  <img src="M3.jpg">
+  <img src="M4.jpg">
+  <img src="M5.jpg">
+  <img src="M6.jpg">
+</div>
+
+<div class="button-container">
+  <button onclick="playAudio()">افتح الهدية 🎁</button>
+</div>
+
+<div class="text">
+  <p>زوجي الحبيب، يا فرحة عمري وسندي في الدنيا،<br>
+  كل عام وأنت بخير، وكل عيد وأنت العيد لنا.</p>
+  <p>أحبك لأنك زوجي، وأحبك أكثر لأنك أب رائع لبناتي،<br>
+  لأنك الحضن اللي نرجع له كلنا،<br>
+  والأمان اللي يحاوطني ويحاوطهم بدون ما يطلبوا.</p>
+  <p>في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br>
+  شفتك تكبر في قلبي يوم بعد يوم،<br>
+  مو بس كزوج، بل كأب يُحتذى به.</p>
+</div>
+
+<audio id="audio" src="M11.mp3" loop></audio>
+
+<script>
+  let audio = document.getElementById("audio");
+  function playAudio() {
+    audio.play();
+  }
+
+  let slides = document.querySelectorAll(".slideshow img");
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 4000);
+</script>
+
+</body>
+</html>
