@@ -10,8 +10,8 @@
       background-color: black;
       overflow: hidden;
       font-family: 'Tahoma', sans-serif;
+      color: white;
     }
-
     .slideshow {
       position: fixed;
       top: 0;
@@ -20,7 +20,6 @@
       height: 100%;
       z-index: -1;
     }
-
     .slideshow img {
       width: 100%;
       height: 100%;
@@ -29,14 +28,13 @@
       opacity: 0;
       animation: slideShow 28s infinite;
     }
-
-    .slideshow img:nth-child(1) { animation-delay: 8s; } /* M3 appears first */
-    .slideshow img:nth-child(2) { animation-delay: 12s; }
-    .slideshow img:nth-child(3) { animation-delay: 16s; }
-    .slideshow img:nth-child(4) { animation-delay: 20s; }
-    .slideshow img:nth-child(5) { animation-delay: 24s; }
-    .slideshow img:nth-child(6) { animation-delay: 0s; }
-
+    .slideshow img:nth-child(1) { animation-delay: 0s; }
+    .slideshow img:nth-child(2) { animation-delay: 4s; }
+    .slideshow img:nth-child(3) { animation-delay: 8s; }
+    .slideshow img:nth-child(4) { animation-delay: 12s; }
+    .slideshow img:nth-child(5) { animation-delay: 16s; }
+    .slideshow img:nth-child(6) { animation-delay: 20s; }
+    .slideshow img:nth-child(7) { animation-delay: 24s; }
     @keyframes slideShow {
       0% { opacity: 0; }
       8% { opacity: 1; }
@@ -44,35 +42,20 @@
       28% { opacity: 0; }
       100% { opacity: 0; }
     }
-
     .message {
       position: absolute;
       top: 10px;
       right: 10px;
-      width: auto;
-      max-width: 400px;
-      text-align: right;
-      color: white;
+      width: 300px;
       font-size: 20px;
+      text-align: right;
       text-shadow: 0 0 10px #f5f5dc; /* توهج بيج */
-      line-height: 1.5;
     }
-
-    .red-name {
+    .highlight-red {
       color: red;
-      display: block;
-      margin-top: 10px;
     }
-
-    .button-container {
-      position: absolute;
-      top: auto;
-      right: 10px;
-      margin-top: 10px;
-      /* تحت النص مباشرة */
-    }
-
     .gift-button {
+      margin-top: 5px;
       background-color: #f5f5dc;
       color: black;
       border: none;
@@ -80,8 +63,8 @@
       font-size: 14px;
       cursor: pointer;
       border-radius: 5px;
+      float: right;
     }
-
     audio {
       display: none;
     }
@@ -106,12 +89,9 @@
       والأمان اللي يحاوطني ويحاوطهم بدون ما يطلبوا.<br /><br />
       في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br />
       شفتك تكبر في قلبي يوم بعد يوم،<br />
-      مو بس كزوج، بل كأب يُحتذى به.
+      مو بس كزوج، بل كأب يُحتذى به.<br />
+      <span class="highlight-red">امٌ حُـــــوَرَ</span>
     </p>
-    <span class="red-name">امٌ حُــــوَرَ</span>
-  </div>
-
-  <div class="button-container">
     <button class="gift-button" onclick="document.getElementById('audio').play()">افتح الهدية</button>
   </div>
 
