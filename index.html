@@ -1,108 +1,77 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>زوجي الحبيب</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: black;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-    }
-
-    .slideshow {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .slideshow img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .slideshow img.active {
-      opacity: 1;
-    }
-
-    .text {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      left: 20px;
-      font-size: 10px;
-      color: white;
-      text-shadow: 0 0 5px beige;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 10px;
-      border-radius: 10px;
-    }
-
-    .button-container {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: beige;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>زوجي الحبيب</title>
+<style>
+  body {
+    background: #222;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  .container {
+    position: relative;
+    display: inline-block;
+    padding: 30px 40px;
+    background: #333;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(245, 222, 179, 0.4); /* توهج بيج خفيف */
+    max-width: 600px;
+    margin: auto;
+  }
+  .message {
+    margin-bottom: 50px; /* مسافة أكبر تحت النص */
+    position: relative;
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+  .message::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px; /* أبعد التظليل تحت النص */
+    width: 85%;
+    height: 14px;
+    background: rgba(245, 222, 179, 0.35); /* تظليل بيج تحت النص */
+    filter: blur(7px);
+    border-radius: 50%;
+    z-index: -1;
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    background: #f5deb3; /* لون بيج */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #333;
+    box-shadow: 0 5px 12px rgba(245, 222, 179, 0.6);
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #e6d0a6;
+  }
+</style>
 </head>
 <body>
-
-<div class="slideshow">
-  <img src="M1.jpg" class="active">
-  <img src="M2.jpg">
-  <img src="M3.jpg">
-  <img src="M4.jpg">
-  <img src="M5.jpg">
-  <img src="M6.jpg">
-</div>
-
-<div class="button-container">
-  <button onclick="playAudio()">افتح الهدية 🎁</button>
-</div>
-
-<div class="text">
-  <p>زوجي الحبيب، يا فرحة عمري وسندي في الدنيا،<br>
-  كل عام وأنت بخير، وكل عيد وأنت العيد لنا.</p>
-  <p>أحبك لأنك زوجي، وأحبك أكثر لأنك أب رائع لبناتي،<br>
-  لأنك الحضن اللي نرجع له كلنا،<br>
-  والأمان اللي يحاوطني ويحاوطهم بدون ما يطلبوا.</p>
-  <p>في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br>
-  شفتك تكبر في قلبي يوم بعد يوم،<br>
-  مو بس كزوج، بل كأب يُحتذى به.</p>
-</div>
-
-<audio id="audio" src="M11.mp3" loop></audio>
-
-<script>
-  let audio = document.getElementById("audio");
-  function playAudio() {
-    audio.play();
-  }
-
-  let slides = document.querySelectorAll(".slideshow img");
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove("active");
-    current = (current + 1) % slides.length;
-    slides[current].classList.add("active");
-  }, 4000);
-</script>
-
+  <div class="container">
+    <div class="message">
+      زوجي الحبيب، يا فرحة عمري وسندي في الدنيا،<br>
+      كل عام وأنت بخير، وكل عيد وأنت العيد لنا.<br><br>
+      أحبك لأنك زوجي، وأحبك أكثر لأنك أب رائع لبناتي،<br>
+      لأنك الحضن اللي نرجع له كلنا،<br>
+      والأمان اللي يحاوطني ويحاوطهم بدون ما يطلبوا.<br><br>
+      في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br>
+      شفتك تكبر في قلبي يوم بعد يوم،<br>
+      مو بس كزوج، بل كأب يُحتذى به.
+    </div>
+    <button>افتح الهدية</button>
+  </div>
 </body>
 </html>
