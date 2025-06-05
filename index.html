@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>زوجي الحبيب</title>
   <style>
     body {
@@ -30,13 +30,13 @@
       animation: slideShow 28s infinite;
     }
 
-    /* جعل M3 أول صورة تظهر */
-    .slideshow img:nth-child(3) { animation-delay: 0s; }
-    .slideshow img:nth-child(4) { animation-delay: 4s; }
-    .slideshow img:nth-child(5) { animation-delay: 8s; }
-    .slideshow img:nth-child(6) { animation-delay: 12s; }
-    .slideshow img:nth-child(1) { animation-delay: 16s; }
-    .slideshow img:nth-child(2) { animation-delay: 20s; }
+    .slideshow img:nth-child(1) { animation-delay: 0s; }
+    .slideshow img:nth-child(2) { animation-delay: 4s; }
+    .slideshow img:nth-child(3) { animation-delay: 8s; }
+    .slideshow img:nth-child(4) { animation-delay: 12s; }
+    .slideshow img:nth-child(5) { animation-delay: 16s; }
+    .slideshow img:nth-child(6) { animation-delay: 20s; }
+    .slideshow img:nth-child(7) { animation-delay: 24s; }
 
     @keyframes slideShow {
       0% { opacity: 0; }
@@ -50,19 +50,18 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      max-width: 300px;
+      width: auto;
+      max-width: 90%;
       text-align: right;
       color: white;
-      font-size: 10px;
-      text-shadow: 0 0 10px #f5f5dc; /* توهج بيج */
-      line-height: 1.4;
+      font-size: 13px;
+      text-shadow: 0 0 10px #f5f5dc; /* توهج بيج خفيف */
     }
 
     .button-container {
       position: absolute;
-      top: calc(10px + 160px); /* تقريبًا تحت النص */
+      top: 200px;
       right: 10px;
-      max-width: 300px;
       text-align: right;
     }
 
@@ -79,27 +78,89 @@
     audio {
       display: none;
     }
+
+    /* أضواء متوهجة على الحواف */
+    body::before, body::after,
+    .glow-left, .glow-right, .glow-top, .glow-bottom {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      z-index: 1000;
+      border-radius: 10px;
+      filter: blur(15px);
+      opacity: 0.7;
+      animation: glowColors 8s linear infinite alternate;
+    }
+
+    .glow-left {
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 100vh;
+      background: linear-gradient(180deg, #f5f5dc, #ffccaa, #f5f5dc);
+    }
+    .glow-right {
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 100vh;
+      background: linear-gradient(180deg, #f5f5dc, #ffccaa, #f5f5dc);
+    }
+    .glow-top {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 20px;
+      background: linear-gradient(90deg, #f5f5dc, #ffccaa, #f5f5dc);
+    }
+    .glow-bottom {
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 20px;
+      background: linear-gradient(90deg, #f5f5dc, #ffccaa, #f5f5dc);
+    }
+
+    @keyframes glowColors {
+      0% {
+        filter: drop-shadow(0 0 5px #f5f5dc) drop-shadow(0 0 10px #f5f5dc);
+        background-position: 0% 50%;
+      }
+      50% {
+        filter: drop-shadow(0 0 15px #ffccaa) drop-shadow(0 0 20px #ffccaa);
+        background-position: 100% 50%;
+      }
+      100% {
+        filter: drop-shadow(0 0 5px #f5f5dc) drop-shadow(0 0 10px #f5f5dc);
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="slideshow">
-    <img src="M1.jpg" />
-    <img src="M2.jpg" />
-    <img src="M3.jpg" />
-    <img src="M4.jpg" />
-    <img src="M5.jpg" />
-    <img src="M6.jpg" />
+    <img src="M3.jpg">
+    <img src="M2.jpg">
+    <img src="M3.jpg">
+    <img src="M4.jpg">
+    <img src="M5.jpg">
+    <img src="M6.jpg">
   </div>
+
+  <div class="glow-left"></div>
+  <div class="glow-right"></div>
+  <div class="glow-top"></div>
+  <div class="glow-bottom"></div>
 
   <div class="message">
     <p>
-      زوجي الحبيب، يا فرحة عمري وسندي في الدنيا،<br />
-      كل عام وأنت بخير، وكل عيد وأنت العيد لنا.<br /><br />
-      أحبك لأنك زوجي، وأحبك أكثر لأنك أب رائع لبناتي،<br />
-      لأنك الحضن اللي نرجع له كلنا،<br />
-      والأمان اللي يحاوطني ويحاوطهم بدون ما يطلبوا.<br /><br />
-      في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br />
-      شفتك تكبر في قلبي يوم بعد يوم،<br />
+      زوجي الحبيب، يا فرحة عمري وسندي في الدنيا،<br>
+      كل عام وأنت بخير، وكل عيد وأنت العيد لنا.<br><br>
+      أحبك لأنك زوجي، وأحبك أكثر لأنك أب رائع لبناتي،<br>
+      لأنك الحضن اللي نرجع له كلنا،<br>
+      والأمان اللي يحاوطني ويحاوطهم بدون ما يطلبوا.<br><br>
+      في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br>
+      شفتك تكبر في قلبي يوم بعد يوم،<br>
       مو بس كزوج، بل كأب يُحتذى به.
     </p>
   </div>
