@@ -52,18 +52,29 @@
       right: 10px;
       width: auto;
       max-width: 90%;
-      color: white;
-      font-size: 18px;
       text-align: right;
-      text-shadow: 0 0 10px #f5f5dc;
+      font-size: 18px;
+      animation: colorChange 12s infinite;
+    }
+
+    @keyframes colorChange {
+      0%   { color: #f5f5dc; text-shadow: 0 0 10px #f5f5dc; }
+      25%  { color: #ff9999; text-shadow: 0 0 10px #ff9999; }
+      50%  { color: #99ccff; text-shadow: 0 0 10px #99ccff; }
+      75%  { color: #ccffcc; text-shadow: 0 0 10px #ccffcc; }
+      100% { color: #f5f5dc; text-shadow: 0 0 10px #f5f5dc; }
+    }
+
+    .highlight {
+      color: red;
+      text-shadow: none;
+      animation: none;
     }
 
     .button-container {
       position: absolute;
-      top: auto;
+      top: 260px;
       right: 10px;
-      bottom: auto;
-      margin-top: 10px;
       text-align: right;
     }
 
@@ -75,11 +86,6 @@
       font-size: 14px;
       cursor: pointer;
       border-radius: 5px;
-    }
-
-    .signature {
-      color: red;
-      font-weight: bold;
     }
 
     audio {
@@ -107,12 +113,12 @@
       في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br>
       شفتك تكبر في قلبي يوم بعد يوم،<br>
       مو بس كزوج، بل كأب يُحتذى به.<br><br>
-      <span class="signature">امٌ حُـــــوَرَ</span>
+      <span class="highlight">أم حُـــــوَرَ</span>
     </p>
+  </div>
 
-    <div class="button-container">
-      <button class="gift-button" onclick="document.getElementById('audio').play()">افتح الهدية</button>
-    </div>
+  <div class="button-container">
+    <button class="gift-button" onclick="document.getElementById('audio').play()">افتح الهدية</button>
   </div>
 
   <audio id="audio" src="M11.mp3" loop></audio>
