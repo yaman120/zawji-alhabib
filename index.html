@@ -50,20 +50,21 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      width: calc(100% - 20px);
+      width: auto;
+      max-width: 90%;
       text-align: right;
       color: white;
       font-size: 18px;
       text-shadow: 0 0 10px #f5f5dc; /* توهج بيج */
     }
 
-    .message .signature {
-      color: red;
-    }
-
     .button-container {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      right: 10px;
       text-align: right;
-      margin: 20px 10px 0 0;
+      width: auto;
     }
 
     .gift-button {
@@ -84,8 +85,8 @@
 <body>
   <div class="slideshow">
     <img src="M3.jpg">
+    <img src="M1.jpg">
     <img src="M2.jpg">
-    <img src="M3.jpg">
     <img src="M4.jpg">
     <img src="M5.jpg">
     <img src="M6.jpg">
@@ -101,14 +102,14 @@
       في عيونك شفت حنان الأب، وفي أفعالك شفت الرجولة اللي تُحَب،<br>
       شفتك تكبر في قلبي يوم بعد يوم،<br>
       مو بس كزوج، بل كأب يُحتذى به.<br><br>
-      <span class="signature">امٌ حُــــوَرَ</span>
+      <span style="color: red;">أمٌ حُـــــوَرَ</span>
     </p>
-
-    <div class="button-container">
-      <button class="gift-button" onclick="document.getElementById('audio').play()">افتح الهدية</button>
-    </div>
   </div>
 
-  <audio id="audio" src="M11.mp3"></audio>
+  <div class="button-container">
+    <button class="gift-button" onclick="document.getElementById('audio').play()">افتح الهدية</button>
+  </div>
+
+  <audio id="audio" src="M11.mp3" loop></audio>
 </body>
 </html>
